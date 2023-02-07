@@ -7,6 +7,7 @@ import { ListEmpty } from '@components/ListEmpty';
 
 import { Container } from './styles';
 import { FlatList } from 'react-native';
+import { Button } from '@components/Button';
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>([])
@@ -29,10 +30,14 @@ export function Groups() {
           />
         )}
         contentContainerStyle={groups.length === 0 && {flex: 1}}
-        ListEmptyComponent={ <ListEmpty message="Que tal adicionar um novo grupo?"/>}
+        ListEmptyComponent={
+          <ListEmpty message="Que tal adicionar um novo grupo?"/>
+        }
       />
 
-      
+      <Button 
+        title="Criar nova Turma"
+      />
     </Container>
   );
 }
