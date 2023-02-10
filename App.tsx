@@ -1,13 +1,14 @@
 import theme from './src/theme';
-import { NewGroup } from '@screens/NewGroup'
-import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
-import { ThemeProvider } from 'styled-components';
-import { Loading } from '@components/Loading';
+import { Groups } from '@screens/Groups'
 import { StatusBar } from 'react-native';
+import { NewGroup } from '@screens/NewGroup'
+import { Loading } from '@components/Loading';
+import { Players } from '@components/Players';
+import { ThemeProvider } from 'styled-components';
+import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold })
-
 
   return (
     <ThemeProvider theme={theme}>
@@ -16,7 +17,7 @@ export default function App() {
         backgroundColor='transparent'
         translucent
       />
-      { fontsLoaded ? <NewGroup /> : <Loading />}
+      { fontsLoaded ? <Players /> : <Loading />}
     </ThemeProvider>
   );
 }
